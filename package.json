@@ -1,0 +1,27 @@
+{
+  "name": "eirik-berget-haukeland-js1-ma3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eirik-Haukeland/eirik-berget-haukeland-js1-ma3.git"
+  },
+  "author": "Eirik Berget Haukeland",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eirik-Haukeland/eirik-berget-haukeland-js1-ma3/issues"
+  },
+  "homepage": "https://github.com/Eirik-Haukeland/eirik-berget-haukeland-js1-ma3#readme",
+  "devDependencies": {
+    "eslint": "^8.27.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-react-hooks": "^4.6.0"
+  }
+}
