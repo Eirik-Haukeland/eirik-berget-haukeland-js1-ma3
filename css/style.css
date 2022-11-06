@@ -1,0 +1,32 @@
+* {
+  margin: unset;
+  padding: unset;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  row-gap: 1.5rem;
+}
+
+h1 {
+  grid-column: 2;
+  margin-bottom: .5rem;
+  justify-self: center;
+}
+
+.game-card {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.game-card > h2 {
+  text-decoration: underline;
+  padding-bottom: .5rem;
+  justify-self: center;
+}
+
+.game-card > span {
+  font-size: 1.25rem;
+}
