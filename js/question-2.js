@@ -1,12 +1,20 @@
+/* eslint-disable no-console */
 /* eslint-disable no-undef */
 /* eslint-disable quotes */
 
 const apiResault = document.querySelector("#api-resault");
 
 const renderGames = (games) => {
+  let target = 8;
   for (let i = 0; i < games.length; i += 1) {
-    if (i === 8) {
+    if (i >= target) {
       break;
+    }
+
+    if (!games[i].name) {
+      target += 1;
+      // eslint-disable-next-line no-continue
+      continue;
     }
 
     const game = document.createElement("div");
@@ -45,11 +53,17 @@ const addError = (message) => {
 
 const callRawgApi = async (key) => {
   try {
-    const request = await fetch(`https://api.rawg.io/api/games?dates=2019-01-01,2019-12-31&ordering=-rating&key=${key}g`);
-    const data = await request.json();
-    renderGames(data.results);
+    const response = await fetch(`https://api.rawg.io/api/games?dates=2019-01-01,2019-12-31&ordering=-rating&key=${key}`);
+    if (!response.ok) {
+      addError("could not get games. pleace try again later");
+      console.error(response);
+    } else {
+      const data = await response.json();
+      renderGames(data.results);
+    }
   } catch (e) {
-    addError(e);
+    addError("could not get games. pleace try again later");
+    console.error(e);
   }
 };
 
